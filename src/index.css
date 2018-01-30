@@ -6,9 +6,41 @@ body {
 header {
 	display: flex;
 	justify-content: center;
+	/*background-color: #07544A;
+	background-position: center;
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/1200px-Harry_Potter_wordmark.svg.png);
+	background-repeat: no-repeat;
+	background-size: 50%;*/
+	height: 200px;
 }
 
+.textOutInput,
+.input {
+	text-align: center;
+	padding-top: 25px;
+}
+.personajes{
+	display: grid;
+	margin-bottom: 20px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	margin-left: 0;
+}
+.AllCharactersBox {
+	margin-left: 0;
+}
+
+.characterBox {
+	width: 240px;
+}
 .imagen {
-	height: 300px;
-	max-width: 300px;
+	height: 240px;
+	width: auto;
+
+}
+.characters {
+	list-style-type: none;
+}
+.input {
+	display: flex;
+	justify-content: center;
 }

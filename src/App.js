@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
+
 class App extends Component {
 	constructor(props) {
 		super(props)
 		this.handleChange = this.handleChange.bind(this);
 		this.state = {
-			characters: []
+			characters: [],
+			filtro: []
 		}
 	}
 	componentDidMount() {
@@ -20,48 +23,55 @@ class App extends Component {
 	}
 	paintCharacters () {
 		return this.state.characters.map(function(personaje){
-			return <li> <p>{ personaje.name }</p> <p>{ personaje.house }</p><p>
-			{personaje.alive? 'Está vivo' : 'Está muerto'}</p> <img className="imagen" src={ personaje.image } />
-			</li>;
+			return <div className="characterBox"><li className="characters">
+			<h3>{ personaje.name }</h3>
+			<img className="imagen" src={ personaje.image } />
+			<p>{ personaje.house }</p>
+			<p>{personaje.alive? 'Está vivo' : 'Está muerto'}</p>
+
+			</li></div>;
 		});
 	};
 
-	handleChange () {
-		const valorRecogido = event.target.value;
-			return this.state.characters.filter(function(personaje){
-				return  personaje.name.includes(valor.recogido)
-			});
-			console.log(valorRecogido)
-		};
-	// 	const filtrar = (event) => {
-	// 		const valorRecogido = event.target.value;
-	// 		if (this.state.characters.name.includes(valorRecogido)){
-	// 			console.log('buscarr')
-	// 		}
+	handleChange (event) {
+		let valorRecogido = event.target.value
+		let filtro = this.state.characters.filter(function(persona){
+			return this.state.characters.includes(persona)
+			console.log(filtro)
+	})
+	this.setState({
+		characters: filtro
+	});
+
+};
+
+	// const list= [];
+	// for (const character of this.state.characters){
+	// 	list.push (<li> <p>{ character.name }</p><img src={ character.image } /></li>);
+	//
 	// }
+	// return list;
 
-		// const list= [];
-		// for (const character of this.state.characters){
-		// 	list.push (<li> <p>{ character.name }</p><img src={ character.image } /></li>);
-		//
-		// }
-		// return list;
+	render() {
+		return (
+			<div className="todo">
+					<header className="App-header">
 
-  render() {
-    return (
-      <div className="todo">
-				<header className="App-header">
-					<h1 className="titulo">My Harry Potter Characters</h1>
-				</header>
-				<main>
-				<input onChange={this.handleChange} className="input"/>
-				<ul> {this.paintCharacters()}
-
-				</ul>
-				</main>
-      </div>
-    );
-  }
+					</header>
+					<main className="container">
+						<h3 className="textOutInput"> Encuentra tu personaje favorito </h3>
+						<div className="input">
+							<input onChange={this.handleChange} />
+						</div>
+						<div className="AllCharactersBox">
+						<ul className="personajes">
+									{this.paintCharacters()}
+						</ul>
+						</div>
+					</main>
+			</div>
+		);
+	}
 }
 
 export default App;
