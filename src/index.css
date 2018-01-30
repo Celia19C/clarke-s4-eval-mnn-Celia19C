@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+header {
+	display: flex;
+	justify-content: center;
+}
+
+.imagen {
+	height: 300px;
+	max-width: 300px;
+}
