@@ -9,7 +9,7 @@ class App extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.state = {
 			characters: [],
-			filtro: []
+			almacen:''
 		}
 	}
 	componentDidMount() {
@@ -22,37 +22,32 @@ class App extends Component {
 		});
 	}
 	paintCharacters () {
-		return this.state.characters.map(function(personaje){
+		const variableParaFiltrarLuego= this.state.characters.filter((personajeFiltrado)=> {
+			return personajeFiltrado.name.toLowerCase().includes(this.state.almacen);
+		})
+		return variableParaFiltrarLuego.map((personaje)=>{
 			return <div className="characterBox"><li className="characters">
 			<h3>{ personaje.name }</h3>
-			<img className="imagen" src={ personaje.image } />
+			<div className="imgBox">
+			<img className="imagen" src={ personaje.image } /> </div>
 			<p>{ personaje.house }</p>
 			<p>{personaje.alive? 'Está vivo' : 'Está muerto'}</p>
-
 			</li></div>;
 		});
 	};
 
 	handleChange (event) {
-		let valorRecogido = event.target.value
-		let filtro = this.state.characters.filter(function(persona){
-			return this.state.characters.includes(persona)
-			console.log(filtro)
-	})
-	this.setState({
-		characters: filtro
-	});
+		const valorRecogido = event.target.value
+
+ 		this.setState ({
+	 almacen: valorRecogido.toLowerCase()
+
+ })
 
 };
 
-	// const list= [];
-	// for (const character of this.state.characters){
-	// 	list.push (<li> <p>{ character.name }</p><img src={ character.image } /></li>);
-	//
-	// }
-	// return list;
-
 	render() {
+		 console.log(this.state.almacen)
 		return (
 			<div className="todo">
 					<header className="App-header">

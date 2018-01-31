@@ -6,11 +6,11 @@ body {
 header {
 	display: flex;
 	justify-content: center;
-	/*background-color: #07544A;
+	background-color: #07544A;
 	background-position: center;
 	background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/1200px-Harry_Potter_wordmark.svg.png);
 	background-repeat: no-repeat;
-	background-size: 50%;*/
+	background-size: 50%;
 	height: 200px;
 }
 
@@ -35,6 +35,7 @@ header {
 .imagen {
 	height: 240px;
 	width: auto;
+		overflow: hidden;
 
 }
 .characters {
@@ -43,4 +44,9 @@ header {
 .input {
 	display: flex;
 	justify-content: center;
+}
+.imgBox {
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
 }
