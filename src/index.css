@@ -1,7 +1,9 @@
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	width: 100%;
 }
 header {
 	display: flex;
@@ -13,17 +15,14 @@ header {
 	background-size:50%;
 	height: 290px;
 }
-
-.textOutInput,
-.input {
-	text-align: center;
-	padding-top: 25px;
-}
-.personajes{
-	display: grid;
+.personajes, .BigLogosBox  {
 	margin-bottom: 20px;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	margin-left: 0;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0;
+	width: 100%
 }
 .AllCharactersBox {
 	margin-left: 0;
@@ -43,13 +42,14 @@ header {
 	list-style-type: none;
 }
 .input {
+	margin-top: 20px;
+	padding-top: 22px;
 	display: flex;
 	justify-content: center;
 }
 input {
 	width: 250px;
 }
-
 .imgBox {
 	height: 180px;
 	width: 180px;
@@ -57,17 +57,14 @@ input {
 	display:flex;
 	justify-content: center;
 }
-.icons {
+.icons{
 	margin-top: 6px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 50px;
 	height: 50px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
-
 }
 .house_gryffindor {
 	background-image: url(./images/gryfindor.jpg);
@@ -82,14 +79,50 @@ input {
 	background-image: url(./images/slytherin.jpg);
 }
 .iconLife {
+	margin-top: 4px;
+	background-position: bottom;
 	display: flex;
 	justify-content: center;
 }
-
-@media all and (max-width:1024px){
-	.personajes{
-		display: grid;
-		margin-bottom: 20px;
-		grid-template-columns: 1fr 1fr 1fr;
+.state_muerto {
+	width: 40px;
+	background-image: url(./images/rip2.jpg);
+}
+.BigLogosBox {
+	margin-top: 50px;
+}
+.gryfindor, .hufflepuff {
+	height:182px;
+	width: auto
+}
+.slytherin {
+	height: 210px;
+	width: auto;
+	align-items: baseline;
+	margin-right: -10px;
+}
+.ravenclaw{
+	padding-bottom: 10px;
+}
+@media all and (max-width:1018px){
+	header {
+		height: 250px;
+	}
+}
+@media all and (max-width:775px){
+	header {
+		height: 220px;
+		background-size:50%;
+	}
+}
+@media all and (max-width:559px){
+	header {
+		height: 150px;
+	}
+}
+@media all and (max-width:425px){
+	header {
+		height: 130px;
+		background-size:80%;
 	}
 }

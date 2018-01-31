@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
-
+import Houses from './components/Houses';
 
 class App extends Component {
 	constructor(props) {
@@ -32,7 +31,7 @@ class App extends Component {
 			<img className="imagen" src={ personaje.image } /> </div>
 			<div className="iconLife">
 			<div className={`icons house_${personaje.house.toLowerCase()}`}></div>
-			<p className="AliveDead">{personaje.alive? ' ' : 'Está muerto'}</p>
+			<div  className={`icons state_${personaje.alive? 'vivo':'muerto'.toLowerCase()}`}> </div>
 			</div>
 			</li></div>;
 		});
@@ -63,8 +62,11 @@ class App extends Component {
 						<ul className="personajes">
 									{this.paintCharacters()}
 						</ul>
+						<Houses />
 						</div>
+
 					</main>
+
 			</div>
 		);
 	}
