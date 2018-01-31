@@ -6,12 +6,12 @@ body {
 header {
 	display: flex;
 	justify-content: center;
-	background-color: #07544A;
+	background-color: black;
 	background-position: center;
-	background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/1200px-Harry_Potter_wordmark.svg.png);
+	background-image: url(http://4.bp.blogspot.com/-HxGhKrT6ohI/UXLaFoQQwNI/AAAAAAAACDo/_VbTZCDKzjo/s1600/Wizarding-world-of-harry-potter-logo.jpg);
 	background-repeat: no-repeat;
-	background-size: 50%;
-	height: 200px;
+	background-size:50%;
+	height: 290px;
 }
 
 .textOutInput,
@@ -28,25 +28,68 @@ header {
 .AllCharactersBox {
 	margin-left: 0;
 }
-
 .characterBox {
 	width: 240px;
+	text-align: center;
+	display:flex;
+	justify-content: center;
 }
 .imagen {
 	height: 240px;
 	width: auto;
-		overflow: hidden;
-
 }
 .characters {
+	margin-top: 20px;
 	list-style-type: none;
 }
 .input {
 	display: flex;
 	justify-content: center;
 }
+input {
+	width: 250px;
+}
+
 .imgBox {
-	height: 200px;
-	width: 200px;
+	height: 180px;
+	width: 180px;
 	overflow: hidden;
+	display:flex;
+	justify-content: center;
+}
+.icons {
+	margin-top: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+}
+.house_gryffindor {
+	background-image: url(./images/gryfindor.jpg);
+}
+.house_hufflepuff {
+	background-image: url(./images/hupelpuff.jpg);
+}
+.house_ravenclaw {
+	background-image: url(./images/ravenclaw.jpg);
+}
+.house_slytherin {
+	background-image: url(./images/slytherin.jpg);
+}
+.iconLife {
+	display: flex;
+	justify-content: center;
+}
+
+@media all and (max-width:1024px){
+	.personajes{
+		display: grid;
+		margin-bottom: 20px;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }

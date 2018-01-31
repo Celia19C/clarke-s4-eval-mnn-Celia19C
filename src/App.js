@@ -30,8 +30,10 @@ class App extends Component {
 			<h3>{ personaje.name }</h3>
 			<div className="imgBox">
 			<img className="imagen" src={ personaje.image } /> </div>
-			<p>{ personaje.house }</p>
-			<p>{personaje.alive? 'Está vivo' : 'Está muerto'}</p>
+			<div className="iconLife">
+			<div className={`icons house_${personaje.house.toLowerCase()}`}></div>
+			<p className="AliveDead">{personaje.alive? ' ' : 'Está muerto'}</p>
+			</div>
 			</li></div>;
 		});
 	};
@@ -54,9 +56,8 @@ class App extends Component {
 
 					</header>
 					<main className="container">
-						<h3 className="textOutInput"> Encuentra tu personaje favorito </h3>
 						<div className="input">
-							<input onChange={this.handleChange} />
+							<input onChange={this.handleChange} placeholder="Escribe tu personaje favorito"/>
 						</div>
 						<div className="AllCharactersBox">
 						<ul className="personajes">
